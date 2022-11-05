@@ -1,7 +1,18 @@
-body{
+/* estilização geral*/
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+*{
     margin: 0;
     padding: 0;
 }
+
+body{
+    font-family: 'Oswald', sans-serif;
+}
+
+/* estilização do HEADER */
 
 .header .container img{
     height: 120px;
@@ -28,10 +39,84 @@ a:hover{
 }
 
 .header .container{
+    box-shadow: 0 0 5px 5px black;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100px;
     width: 100%;
-    position: fixed;
+}
+
+/*Estilização da parte de conteúdo*/
+
+.content .texts{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.texts .title{
+    font-weight: 700;
+}
+
+.subtitle{
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+/*Estilização do carrossel*/
+
+section{
+    margin-top: 50px;
+}
+
+.slider{
+    overflow: hidden;
+
+}
+
+.slider input{
+   margin: 30px auto auto 50px;
+}
+
+.slider input:nth-child(1){
+    margin-left: 220px;
+}
+
+
+.slider > .slider-content{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    transition: all 500ms ease;
+
+}
+
+.slider-content img{
+    height: 500px;
+    margin: 20px auto auto 220px;
+
+}
+
+.slider > .slider-content > .slider-item {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.slider > input:nth-child(1):checked ~ .slider-content{
+    transform: translateX(0%);
+}
+
+.slider > input:nth-child(2):checked ~ .slider-content{
+    transform: translateX(-100%);
+}
+.slider > input:nth-child(3):checked ~ .slider-content{
+    transform: translateX(-200%);
+}
+
+.slider > input:nth-child(4):checked ~ .slider-content{
+    transform: translateX(-300%);
+}
+
+.slider > input:nth-child(5):checked ~ .slider-content{
+    transform: translateX(-400%);
 }
