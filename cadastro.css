@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Oswald', sans-serif;
+    background-image: url('images/background-cadastro.jpg');
+    background-size: cover;
+}
+
+/*Cadastro*/
+
+.formulario{
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.formulario-cadastro{
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0 20px 0;
+    background-color: white;
+    height: 500px;
+    width: 300px;
+    padding: 50px;
+    box-shadow: 0 0 5px 5px black;
+}
+
+.formulario-cadastro h1{
+    margin-bottom: 30px;
+}
+
+.input{
+    height: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+    border: black;
+    background-color: #cfcfcf;
+    border-radius: 5px;
+}
+
+.terms{
+    display: flex;
+    font-size: 12px;
+    justify-content: space-around;
+    margin: 10px 12px 10px 0
+}
+
+.footer, button{
+    color: white;
+}
+
+button{
+    height: 40px;
+    width: 90px;
+    border-radius: 5px;
+    background-color: black;
+    font-size: 17px;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+}
+

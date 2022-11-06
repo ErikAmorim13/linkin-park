@@ -1,4 +1,4 @@
-/* estilização geral*/
+
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
@@ -9,41 +9,6 @@
 
 body{
     font-family: 'Oswald', sans-serif;
-}
-
-/* estilização do HEADER */
-
-.header .container img{
-    height: 120px;
-    margin-left: 20px;
-}
-
-.header .container .navbar ul{
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-    margin-right: 100px;
-    width: 800px;
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.header .container .navbar ul li a{
-    text-decoration: none;
-    color: black
-}
-
-.navbar li a:hover{
-    font-size: 22px;
-}
-
-.header .container{
-    box-shadow: 0 0 5px 5px black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
-    width: 100%;
 }
 
 /*Estilização da parte de conteúdo*/
@@ -183,64 +148,14 @@ section{
 
 /*Hiato*/
 
+.history_hiato h1{
+    margin-bottom: 20px;
+}
+
 .history_hiato{
     display: flex;
 }
 
 .history_hiato .history_text{
     padding: 70px;
-}
-
-/*footer estilização*/
-
-.footer{
-    display: flex;
-    background-color: #818181;
-    height: 200px;
-    padding: 50px;
-    margin-top: 10px;
-}
-
-footer{
-    background-color: #818181;
-}
-
-.footer img{
-    height: 150px;
-    margin-right: 20px;
-}
-
-.footer ul li{
-    list-style-type: none;
-}
-
-.footer ul li a{
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    margin-top: 20px;
-}
-
-.divisorias{
-    margin-right: 50px;
-}
-
-.icons{
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px; 
-    font-size: 15px;
-}
-
-i{
-    height: 30px;
-}
-
-.icon a, .copyright{
-    text-decoration: none;
-    color: white;
-}
-
-.copyright{
-    text-align: center;
 }
