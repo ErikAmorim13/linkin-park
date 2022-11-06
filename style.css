@@ -1,5 +1,4 @@
 /* estilização geral*/
-
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
@@ -34,7 +33,7 @@ body{
     color: black
 }
 
-a:hover{
+.navbar li a:hover{
     font-size: 22px;
 }
 
@@ -119,4 +118,129 @@ section{
 
 .slider > input:nth-child(5):checked ~ .slider-content{
     transform: translateX(-400%);
+}
+
+/* Contexto */
+
+.history_inicio{
+    display: flex;
+    align-items: center;
+    background-color: black;
+    height: 500px;
+    margin-top: 50px;
+}
+
+.history_inicio img, .history_sucesso img{
+    height: 500px;
+    width: 600px;
+}
+
+.history_inicio h1, .history_inicio p, .history_premiacoes, .footer{
+    color: white
+}
+
+.history_sucesso .history_text h1, .history_inicio h1{
+    margin-bottom: 10px;
+}
+
+.history_inicio .history_text, .history_premiacoes .history_text{
+    padding: 70px 0 0 30px;
+    height: 400px;
+}
+
+/*O sucesso*/
+
+.history_sucesso{
+    display: flex;
+    align-items: center;
+    background-color: #FFCC00;
+    height: 500px;
+}
+
+
+.history_sucesso .history_text{
+    margin-left: 30px;
+    padding: 70px;
+}
+
+/*Premiações*/
+
+.history_premiacoes{
+    display: flex;
+    align-items: center;
+    height: 400px;
+    background-color: #D65B50
+}
+
+.history_premiacoes img, .history_hiato img{
+    height: 400px;
+    width: 500px;
+}
+
+.history_premiacoes ul{
+    padding: 30px
+}
+
+/*Hiato*/
+
+.history_hiato{
+    display: flex;
+}
+
+.history_hiato .history_text{
+    padding: 70px;
+}
+
+/*footer estilização*/
+
+.footer{
+    display: flex;
+    background-color: #818181;
+    height: 200px;
+    padding: 50px;
+    margin-top: 10px;
+}
+
+footer{
+    background-color: #818181;
+}
+
+.footer img{
+    height: 150px;
+    margin-right: 20px;
+}
+
+.footer ul li{
+    list-style-type: none;
+}
+
+.footer ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.divisorias{
+    margin-right: 50px;
+}
+
+.icons{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px; 
+    font-size: 15px;
+}
+
+i{
+    height: 30px;
+}
+
+.icon a, .copyright{
+    text-decoration: none;
+    color: white;
+}
+
+.copyright{
+    text-align: center;
 }
