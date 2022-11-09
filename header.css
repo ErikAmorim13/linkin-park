@@ -21,7 +21,7 @@ body{
     margin-left: 20px;
 }
 
-.header .container .navbar ul{
+.header .container .navbar .lista{
     list-style-type: none;
     display: flex;
     justify-content: space-between;
