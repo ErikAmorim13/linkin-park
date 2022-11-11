@@ -10,7 +10,6 @@
 .content{
     text-align: center;
     margin-top: 30px;
-    margin-bottom: 30px;
 }
 
 .content .subtitle{
@@ -19,7 +18,7 @@
 }
 
 .curious h3{
-    margin: 20px;
+    margin: 20px 0 20px 0;
 }
 
 h3{
@@ -56,8 +55,6 @@ h3{
 
 .album{
     display: flex;
-    margin-bottom: 20px;
-    box-shadow: 0 0 5px 5px;
 }
 
 .img_album img{
@@ -87,9 +84,6 @@ h3{
 
 .curious{
     width: 1800px;
+    text-align: left;
 }
 
-.single{
-    font-weight: 700;
-    font-size: 20px;
-}
