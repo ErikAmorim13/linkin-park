@@ -52,3 +52,42 @@ body{
 .sair{
     margin-left: 100px;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* PARTE DE QUIZ*/
+
+.form{
+    border: 3px solid red;
+    width: 30%;
+    text-align: center;
+    margin-top: 20vh;
+}
+
+.question{
+    display: flex;
+    flex-direction: column;
+    border: 3px solid yellow;
+}
+
+.pergunta{
+    display: flex;
+    margin-top: 20px;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+}
+
+.content img{
+    height: 300px;
+}
