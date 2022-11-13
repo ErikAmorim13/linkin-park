@@ -109,3 +109,18 @@ body{
 .sub{
     font-size: 18px;
 }
+
+.button button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 40px;
+    width: 90px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 17px;
+}

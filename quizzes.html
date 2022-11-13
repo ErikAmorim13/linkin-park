@@ -36,12 +36,12 @@
         </div>      
     </header>
 
-    <div class="content">
+    <div class="content" id="content">
 
         <h1>AGORA É A SUA VEZ!</h1>
         <p class="sub">Hora de descobrir se você é um verdadeiro soldier de carteirinha!</p>
 
-        <div class="form">
+        <div class="form" id="form1">
             <div class="question">
                 <img src="https://i.pinimg.com/originals/6f/11/a1/6f11a19441df822310912e37fd86e17e.jpg">
 
@@ -59,7 +59,7 @@
             </div>
         </div>
 
-        <div class="form">
+        <div class="form" id="form2">
             <div class="question">
                 <img src="https://www.revolvermag.com/sites/default/files/media/images/article/linkinparkrockamring.jpeg">
 
@@ -77,7 +77,7 @@
             </div>
         </div>
 
-        <div class="form">
+        <div class="form" id="form3">
             <div class="question">
                 <img src="https://static.thousandwonders.net/Lincoln.Park.original.17575.jpg">
 
@@ -95,7 +95,7 @@
             </div>
         </div>
 
-        <div class="form">
+        <div class="form" id="form4">
             <div class="question">
                 <img src="https://assets.entrepreneur.com/content/3x2/2000/20180125180430-youtube.jpeg">
 
@@ -113,7 +113,7 @@
             </div>
         </div>
 
-        <div class="form">
+        <div class="form" id="form5">
             <div class="question">
                 <img src="https://cutewallpaper.org/21/push-wallpaper/Free-download-Linkin-Park-Pushing-Me-Away-Road-to-Revolution-.jpg">
 
@@ -131,7 +131,7 @@
             </div>
         </div>
 
-        <div class="form">
+        <div class="form" id="form6">
             <div class="question">
                 <img src="https://wallpapercave.com/wp/wp10609268.jpg">
 
@@ -149,7 +149,7 @@
             </div>
         </div>
 
-        <div class="form">
+        <div class="form" id="form7">
             <div class="question">
                 <img src="images/jayz.jpg">
 
@@ -167,7 +167,7 @@
             </div>
         </div>
 
-        <div class="form">
+        <div class="form" id="form8">
             <div class="question">
                 <img src="https://i.ytimg.com/vi/eVTXPUF4Oz4/maxresdefault.jpg">
 
@@ -185,7 +185,7 @@
             </div>
         </div>
 
-        <div class="form">
+        <div class="form" id="form9">
             <div class="question">
                 <img src="https://i.pinimg.com/originals/d4/1f/be/d41fbe38db7c4f472dbff25749307ccf.jpg">
 
@@ -203,7 +203,7 @@
             </div>
         </div>
 
-        <div class="form">
+        <div class="form" id="form10">
             <div class="question">
                 <img src="https://i.pinimg.com/736x/d5/af/43/d5af434b2fe1eae1f78bd7f27e0453ab.jpg">
 
@@ -221,6 +221,10 @@
             </div>
         </div>
 
+        <div class="button">
+            <button onclick="checar()">Enviar</button>(Resultado abaixo)
+        </div>
+
     </div>
     
     
@@ -230,9 +234,115 @@
 <script>
     function checar(){
         var questao1 = slt_options1.value
+        var questao2 = slt_options2.value
+        var questao3 = slt_options3.value
+        var questao4 = slt_options4.value
+        var questao5 = slt_options5.value
+        var questao6 = slt_options6.value
+        var questao7 = slt_options7.value
+        var questao8 = slt_options8.value
+        var questao9 = slt_options9.value
+        var questao10 = slt_options10.value
+        var certo = 0
+        var errado = 0
+        var porcAcerto = 0
 
         if(questao1 == 2){
-            alert('Certa resposta!')
+            form1.style.border = "solid 3px greenyellow"
+            certo++
+        }else{
+            form1.style.border = "solid 3px red"
+            errado++
         }
+
+        if(questao2 == 4){
+            form2.style.border = "solid 3px greenyellow"
+            certo++
+        }else{
+            form2.style.border = "solid 3px red"
+            errado++
+        }
+
+        if(questao3 == 1){
+            form3.style.border = "solid 3px greenyellow"
+            certo++
+        }else{
+            form4.style.border = "solid 3px red"
+            errado++
+        }
+
+        if(questao4 == 2){
+            form4.style.border = "solid 3px greenyellow"
+            certo++
+        }else{
+            form4.style.border = "solid 3px red"
+            errado++
+        }
+
+        if(questao5 == 1){
+            form5.style.border = "solid 3px greenyellow"
+            certo++
+        }else{
+            form5.style.border = "solid 3px red"
+            errado++
+        }
+
+        if(questao6 == 1 || questao6 == 3){
+            form6.style.border = "solid 3px greenyellow"
+            certo++
+        }else{
+            form6.style.border = "solid 3px red"
+            errado++
+        }
+
+        if(questao7 == 4){
+            form7.style.border = "solid 3px greenyellow"
+            certo++
+        }else{
+            form7.style.border = "solid 3px red"
+            errado++
+        }
+
+        if(questao8 == 2){
+            form8.style.border = "solid 3px greenyellow"
+            certo++
+        }else{
+            form8.style.border = "solid 3px red"
+            errado++
+        }
+
+        if(questao9 == 3){
+            form9.style.border = "solid 3px greenyellow"
+            certo++
+        }else{
+            form9.style.border = "solid 3px red"
+            errado++
+        }
+
+        if(questao10 == 2){
+            form10.style.border = "solid 3px greenyellow"
+            certo++
+        }else{
+            form10.style.border = "solid 3px red"
+            errado++
+        }
+
+        porcAcerto = (certo/10) * 100
+        content.innerHTML += 
+        `
+        <h1 id="result">Você acertou ${porcAcerto.toFixed(0)}%</h1>
+        <p class="sub">Acertou ${certo} de 10</p>
+        <p class="sub">Errou ${errado}</p>
+        `
+
+        if(porcAcerto >= 80){
+            content.innerHTML += `<br> <p class="sub">Uau! Você é digno de ser um soldier!</p><br>`
+        }else if(porcAcerto >= 60){
+            content.innerHTML += `<br> <p class="sub">Você sabe, mas não tudo! Está próximo de se tornar um soldier</p><br>`
+        }else if(porcAcerto >= 40){
+            content.innerHTML += `<br> <p class="sub">Você precisa se aprofundar um pouco mais</p><br>`
+        }else{
+            content.innerHTML += `<br> <p class="sub">Você é um fã recente, que tal ler um dos nossos artigos e tentar novamente?</p><br>`
+        }   
     }
 </script>
