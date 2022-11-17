@@ -51,8 +51,8 @@
 
                 <select class="slt_options" id="slt_options1">
                     <option value="1">Hybryd Theory</option>
-                    <option value="2">Xero</option>
-                    <option value="3">Lincoln Park</option>
+                    <option value="2">Lincoln Park</option>
+                    <option value="3">Xero</option>
                     <option value="4">Grey Daze</option>
                 </select>
 
@@ -142,7 +142,7 @@
                 <select class="slt_options" id="slt_options6">
                     <option value="1">New Divide</option>
                     <option value="2">Until it´s Gone</option>
-                    <option value="3">What I´ve Done</option>
+                    <option value="3">Iridescent</option>
                     <option value="4">In The End</option>
                 </select>
 
@@ -232,107 +232,106 @@
 </html>
 
 <script>
+
+    /*const div = document.querySelector('div');
+
+    // Assign the warning class to the first div
+    div.className = 'warning';*/
+
+    var questoes =[]
+    var corretas = [3,4,1,2,1,1,4,2,3,2]
+
     function checar(){
-        var questao1 = slt_options1.value
-        var questao2 = slt_options2.value
-        var questao3 = slt_options3.value
-        var questao4 = slt_options4.value
-        var questao5 = slt_options5.value
-        var questao6 = slt_options6.value
-        var questao7 = slt_options7.value
-        var questao8 = slt_options8.value
-        var questao9 = slt_options9.value
-        var questao10 = slt_options10.value
+        
+        questoes.push
+        (
+        slt_options1.value, 
+        slt_options2.value, 
+        slt_options3.value, 
+        slt_options4.value, 
+        slt_options5.value, 
+        slt_options6.value, 
+        slt_options7.value,
+        slt_options8.value,
+        slt_options9.value,
+        slt_options10.value
+        )
         var certo = 0
-        var errado = 0
         var porcAcerto = 0
+        var form = document.querySelectorAll('.form')
 
-        if(questao1 == 2){
-            form1.style.border = "solid 3px greenyellow"
-            certo++
-        }else{
-            form1.style.border = "solid 3px red"
-            errado++
-        }
+        for(let index = 0; index < corretas.length; index++){
+            if(questoes[index] == corretas[index]){
+                certo++                
+            }
 
-        if(questao2 == 4){
-            form2.style.border = "solid 3px greenyellow"
-            certo++
-        }else{
-            form2.style.border = "solid 3px red"
-            errado++
-        }
+            if(questoes[0] == corretas[0]){
+                form1.style.border = 'solid 3px greenyellow'
+            }else{
+                form1.style.border = 'solid 3px red'
+            }
 
-        if(questao3 == 1){
-            form3.style.border = "solid 3px greenyellow"
-            certo++
-        }else{
-            form4.style.border = "solid 3px red"
-            errado++
-        }
+            if(questoes[1] == corretas[1]){
+                form2.style.border = 'solid 3px greenyellow'
+            }else{
+                form2.style.border = 'solid 3px red'
+            }
 
-        if(questao4 == 2){
-            form4.style.border = "solid 3px greenyellow"
-            certo++
-        }else{
-            form4.style.border = "solid 3px red"
-            errado++
-        }
+            if(questoes[2] == corretas[2]){
+                form3.style.border = 'solid 3px greenyellow'
+            }else{
+                form3.style.border = 'solid 3px red'
+            }
 
-        if(questao5 == 1){
-            form5.style.border = "solid 3px greenyellow"
-            certo++
-        }else{
-            form5.style.border = "solid 3px red"
-            errado++
-        }
+            if(questoes[3] == corretas[3]){
+                form4.style.border = 'solid 3px greenyellow'
+            }else{
+                form4.style.border = 'solid 3px red'
+            }
 
-        if(questao6 == 1 || questao6 == 3){
-            form6.style.border = "solid 3px greenyellow"
-            certo++
-        }else{
-            form6.style.border = "solid 3px red"
-            errado++
-        }
+            if(questoes[4] == corretas[4]){
+                form5.style.border = 'solid 3px greenyellow'
+            }else{
+                form5.style.border = 'solid 3px red'
+            }
 
-        if(questao7 == 4){
-            form7.style.border = "solid 3px greenyellow"
-            certo++
-        }else{
-            form7.style.border = "solid 3px red"
-            errado++
-        }
+            if(questoes[5] == corretas[5]){
+                form6.style.border = 'solid 3px greenyellow'
+            }else{
+                form6.style.border = 'solid 3px red'
+            }
 
-        if(questao8 == 2){
-            form8.style.border = "solid 3px greenyellow"
-            certo++
-        }else{
-            form8.style.border = "solid 3px red"
-            errado++
-        }
+            if(questoes[6] == corretas[6]){
+                form7.style.border = 'solid 3px greenyellow'
+            }else{
+                form7.style.border = 'solid 3px red'
+            }
 
-        if(questao9 == 3){
-            form9.style.border = "solid 3px greenyellow"
-            certo++
-        }else{
-            form9.style.border = "solid 3px red"
-            errado++
-        }
+            if(questoes[7] == corretas[7]){
+                form8.style.border = 'solid 3px greenyellow'
+            }else{
+                form8.style.border = 'solid 3px red'
+            }
 
-        if(questao10 == 2){
-            form10.style.border = "solid 3px greenyellow"
-            certo++
-        }else{
-            form10.style.border = "solid 3px red"
-            errado++
+            if(questoes[8] == corretas[8]){
+                form9.style.border = 'solid 3px greenyellow'
+            }else{
+                form9.style.border = 'solid 3px red'
+            }
+
+            if(questoes[9] == corretas[9]){
+                form10.style.border = 'solid 3px greenyellow'
+            }else{
+                form10.style.border = 'solid 3px red'
+            }
         }
 
         porcAcerto = (certo/10) * 100
         content.innerHTML += 
         `
-        <h1 id="result">Você acertou ${porcAcerto.toFixed(0)}%</h1>
+        <h1>Você acertou ${porcAcerto.toFixed(0)}%</h1>
         <p class="sub">Acertou ${certo} de 10</p>
-        <p class="sub">Errou ${errado}</p>
+
         `
 
         if(porcAcerto >= 80){
