@@ -63,6 +63,11 @@ body{
 
 
 
+
+
+
+
+
 /* PARTE DE QUIZ*/
 
 .form{
@@ -123,4 +128,32 @@ body{
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 17px;
+}
+
+
+
+
+
+
+
+
+
+
+/*FRASES ESTILOS*/
+
+
+.main{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.main img{
+    height: 400px;
+    width: 500px;
+}
+
+.frase{
+    text-align: right;
+    margin-left: 20px;
 }
