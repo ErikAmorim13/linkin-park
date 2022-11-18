@@ -139,14 +139,15 @@ body{
 
 
 
-/*FRASES ESTILOS*/
+/*PLAYLIST LP ESTILOS*/
 
 
 .main{
-    display: flex;
+    display: none;
     justify-content: space-between;
     width: 80%;
 }
+
 
 .main img{
     height: 400px;
