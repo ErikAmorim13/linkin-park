@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+.content{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.content .subtitle{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.curious h3{
+    margin: 20px 0 20px 0;
+}
+
+h3{
+    font-weight: 400;
+}
+
+#hybrid{
+    background: linear-gradient(#ACA9A6, #7C101A);
+}
+
+#meteora_div{
+    background: linear-gradient(#A89074, black);
+}
+
+#hunting{
+    background: linear-gradient(#A5A3A4, white);
+}
+
+#LT{
+    background: linear-gradient(#ADB3B1,#2D1D1D);
+}
+
+#hybrid, #meteora_div, #LT, #thousand, #one_more{
+    color: white;
+}
+
+#one_more{
+    background: linear-gradient(#433238,#C8A69C);
+}
+
+#thousand{
+    background: linear-gradient(#AFADB0,black);
+}
+
+.album{
+    display: flex;
+}
+
+.img_album img{
+    height: 400px;
+}
+
+#img_mtm img{
+    height: 250px;
+}
+
+#img_LT img{
+    height: 300px;
+    width: 400px;
+}
+
+#meteora{
+    width: 400px;
+}
+
+.setlist{
+    width: 700px;
+}
+
+.setlist, .curious{
+    margin-left: 50px;
+}
+
+.curious{
+    width: 1800px;
+    text-align: left;
+}
+
