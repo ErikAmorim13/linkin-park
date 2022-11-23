@@ -40,26 +40,71 @@
 
             <br>
 
-            <div class="inst">
+            <div class="inst" id="inst">
                 <ol>
-                    <li>Envie um email para <a href="support.portaLP@gmail.com">support.portaLP@gmail.com</a></li>
-                    <li>Dê sua nota de 0 a 10</li>
+                    <li>Dê sua nota</li>
+                    <input class="input" id="ipt_nota">
                     <li>Porquê a nota escolhida? O que curtiu ou não curtiu?</li>
+                    <input class="input" id="ipt_motivo">
                     <li>Sugestões de melhoria</li>
+                    <input class="input" id="ipt_sugestao">
                     <li>Comentários adicionais (opcional)</li>
+                    <input class="input" id="ipt_comentarios">
                 </ol>
 
-                <br>
+                <div class="button">
+                    <button onclick="envio()">Enviar</button>
+                </div>
 
-                <p class="sub">Nós do Portal Linkin Park agradecemos sua participação e esperamos te ver aqui mais vezes!</p>
-
-                <br>
-
-                <img src="https://i.pinimg.com/originals/4d/76/81/4d7681a92101f16f5c1a0019fa1abc18.jpg" height="200px">
             </div>
+
+                <br>
+
+                <div class="img" style="display: none;">
+                    <p class="sub">Seu feedback foi computado! Nós do Portal Linkin Park agradecemos sua participação e esperamos te ver aqui mais vezes!</p>
+
+                    <br>
+    
+                    <img src="https://i.pinimg.com/originals/4d/76/81/4d7681a92101f16f5c1a0019fa1abc18.jpg" height="200px">
+
+                </div>
+
+            
         </div>
     </section>
 
     
 </body>
 </html>
+
+<script>
+    function envio(){
+        var notaVar = Number(ipt_nota.value)
+        var motivoVar = ipt_motivo.value
+        var sugestaoVar = ipt_sugestao.value
+        var comentariosVar = ipt_comentarios.value
+        var erro = false
+
+        if(Number.isNaN(ipt_nota)){
+            erro = true
+            alert('Nota inválida')
+        }
+
+        if(notaVar == '' || motivoVar == '' || sugestaoVar == ''){
+            erro = true
+            alert('Campos imcompletos!')
+        }
+
+        if(erro){
+            alert('Existem pendências no seu formulário!')
+            ipt_nota.style.border = 'solid 3px red'
+            ipt_motivo.style.color = 'solid 3px red'
+            ipt_sugestao.style.color = 'solid 3px red'
+        }else{
+            inst.style.display = 'none'
+            img.style.display = 'block'
+
+            
+        }
+    }
+</script>

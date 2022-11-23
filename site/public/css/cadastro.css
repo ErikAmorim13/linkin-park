@@ -51,11 +51,6 @@ body{
     margin: 10px 12px 10px 0
 }
 
-.titulos{
-    border: red 3px solid;
-    height: 70px;
-}
-
 .footer, button{
     color: white;
 }

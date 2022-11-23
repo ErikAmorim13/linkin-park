@@ -167,4 +167,13 @@ body{
 
 
 
-/*AVALIE-NOS - NÃO NECESSITOU DE QUALQUER MUDANÇA ESPECÍFICA*/
+/*AVALIE-NOS*/
+
+.input{
+    height: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+    border: black;
+    background-color: #cfcfcf;
+    border-radius: 5px;
+}

@@ -13,6 +13,7 @@ senha varchar(45)
 CREATE TABLE avaliacao(
 idAvaliacao int,
 nota int,
+motivo varchar(45),
 sugestao varchar(45),
 comentarios varchar(45),
 fkUsuario int,
@@ -24,8 +25,7 @@ ALTER TABLE avaliacao ADD CONSTRAINT chkNota check(nota between 0 and 10);
 
 CREATE TABLE quiz(
 idQuiz int primary key,
-questao varchar(45),
-resposta varchar(45),
+acerto int,
 fkUsuario int,
 foreign key(fkUsuario) REFERENCES usuario(idUsuario)
 );
