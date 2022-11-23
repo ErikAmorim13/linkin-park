@@ -37,8 +37,12 @@
 
             <p class="sub">Conhece o Linkin Park a pouco tempo ou não sabe o que ouvir hoje? Temos sugestões!</p>
 
-            <div class="button">
+            <div class="button" id="button">
                 <button onclick="gerar()">Sugerir</button>
+            </div>
+
+            <div class="button" id="tent" style="display: none;">
+                <button onclick="tentar()">Tentar Novamente</button>
             </div>
 
             <div id="main1" class="main">
@@ -232,6 +236,8 @@
 
 <script>
     function gerar(){
+        button.style.display = 'none'
+        tent.style.display = 'block'
         var sorteio = (Math.random()*11 + 1).toFixed(0)
 
         if(sorteio == 1){
@@ -259,5 +265,9 @@
         }else{
             main12.style.display = 'flex'
         }
+    }
+
+    function tentar(){
+        window.location.href = 'playlist.html'
     }
 </script>
