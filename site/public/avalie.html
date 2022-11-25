@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/d4c883c854.js" crossorigin="anonymous"></script>
+    <script src="js/funcoes.js"></script>
     <link rel="stylesheet" href="css/quizzes.css">
     <title>Avalie-nos</title>
 </head>
@@ -53,7 +54,11 @@
                 </ol>
 
                 <div class="button">
-                    <button onclick="envio()">Enviar</button>
+                    <button onclick="enviar()">Enviar</button>
+                </div>
+
+                <div id="cardErro">
+
                 </div>
 
             </div>
@@ -78,14 +83,17 @@
 </html>
 
 <script>
-    function envio(){
+    function enviar() {
+        aguardar();
+
         var notaVar = Number(ipt_nota.value)
         var motivoVar = ipt_motivo.value
         var sugestaoVar = ipt_sugestao.value
         var comentariosVar = ipt_comentarios.value
         var erro = false
 
-        if(Number.isNaN(ipt_nota)){
+       
+        if(Number.isNaN(ipt_nota.value)){
             erro = true
             alert('Nota inválida')
         }
@@ -100,11 +108,50 @@
             ipt_nota.style.border = 'solid 3px red'
             ipt_motivo.style.color = 'solid 3px red'
             ipt_sugestao.style.color = 'solid 3px red'
-        }else{
+        }
+        else {
             inst.style.display = 'none'
             img.style.display = 'block'
-
-            
+            setInterval(sumirMensagem, 5000)
         }
+
+
+        fetch("/usuarios/enviar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                notaServer: notaVar,
+                motivoServer: motivoVar,
+                sugestaoServer: sugestaoVar,
+                comentariosServer: comentariosVar,
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO enviar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                });
+
+            } else {
+
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
     }
 </script>

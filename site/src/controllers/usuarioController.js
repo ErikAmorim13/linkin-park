@@ -97,9 +97,47 @@ function cadastrar(req, res) {
     }
 }
 
+function enviar(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var nota = req.body.notaServer;
+    var motivo = req.body.motivoServer;
+    var sugestao= req.body.sugestaoServer;
+    var comentarios = req.body.comentariosServer;
+
+    // Faça as validações dos valores
+    if (nota == undefined) {
+        res.status(400).send("Seu nome está undefined!");
+    } else if (motivo == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    } else if (sugestao == undefined) {
+        res.status(400).send("Sua senha está undefined!");
+    } else if(comentarios == undefined){
+        res.status(400).send("Seu user está undefined!");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.enviar(nota, motivo, sugestao, comentarios)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar
+    testar,
+    enviar
 }
