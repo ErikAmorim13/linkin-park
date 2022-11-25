@@ -22,7 +22,7 @@
                         <li><a href="avalie.html">Avalie-nos</a></li>
 
                         <div class="sair">
-                            <a href="#"><i class="fa-solid fa-door-open"></i> Sair</a>
+                            <a href="index.html"><i class="fa-solid fa-door-open"></i> Sair</a>
 
                         </div>
 
@@ -254,72 +254,12 @@
         )
         var certo = 0
         var porcAcerto = 0
-        var form = document.querySelectorAll('.form')
 
         for(let index = 0; index < corretas.length; index++){
             if(questoes[index] == corretas[index]){
                 certo++                
             }
 
-            if(questoes[0] == corretas[0]){
-                form1.style.border = 'solid 3px greenyellow'
-            }else{
-                form1.style.border = 'solid 3px red'
-            }
-
-            if(questoes[1] == corretas[1]){
-                form2.style.border = 'solid 3px greenyellow'
-            }else{
-                form2.style.border = 'solid 3px red'
-            }
-
-            if(questoes[2] == corretas[2]){
-                form3.style.border = 'solid 3px greenyellow'
-            }else{
-                form3.style.border = 'solid 3px red'
-            }
-
-            if(questoes[3] == corretas[3]){
-                form4.style.border = 'solid 3px greenyellow'
-            }else{
-                form4.style.border = 'solid 3px red'
-            }
-
-            if(questoes[4] == corretas[4]){
-                form5.style.border = 'solid 3px greenyellow'
-            }else{
-                form5.style.border = 'solid 3px red'
-            }
-
-            if(questoes[5] == corretas[5]){
-                form6.style.border = 'solid 3px greenyellow'
-            }else{
-                form6.style.border = 'solid 3px red'
-            }
-
-            if(questoes[6] == corretas[6]){
-                form7.style.border = 'solid 3px greenyellow'
-            }else{
-                form7.style.border = 'solid 3px red'
-            }
-
-            if(questoes[7] == corretas[7]){
-                form8.style.border = 'solid 3px greenyellow'
-            }else{
-                form8.style.border = 'solid 3px red'
-            }
-
-            if(questoes[8] == corretas[8]){
-                form9.style.border = 'solid 3px greenyellow'
-            }else{
-                form9.style.border = 'solid 3px red'
-            }
-
-            if(questoes[9] == corretas[9]){
-                form10.style.border = 'solid 3px greenyellow'
-            }else{
-                form10.style.border = 'solid 3px red'
-            }
         }
 
         porcAcerto = (certo/10) * 100

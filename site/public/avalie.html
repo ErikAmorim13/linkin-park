@@ -23,7 +23,7 @@
                         <li><a class="active" href="#">Avalie-nos</a></li>
 
                         <div class="sair">
-                            <a href="#"><i class="fa-solid fa-door-open"></i> Sair</a>
+                            <a href="index.html"><i class="fa-solid fa-door-open"></i> Sair</a>
                 
                         </div>
 
@@ -57,6 +57,10 @@
                     <button onclick="enviar()">Enviar</button>
                 </div>
 
+                <div id="div_aguardar" class="loading-div">
+                    
+                </div>
+
                 <div id="cardErro">
 
                 </div>
@@ -65,7 +69,7 @@
 
                 <br>
 
-                <div class="img" style="display: none;">
+                <div class="img" id="img" style="display: none;">
                     <p class="sub">Seu feedback foi computado! Nós do Portal Linkin Park agradecemos sua participação e esperamos te ver aqui mais vezes!</p>
 
                     <br>
@@ -93,7 +97,7 @@
         var erro = false
 
        
-        if(Number.isNaN(ipt_nota.value)){
+        if(isNaN(ipt_nota.value)){
             erro = true
             alert('Nota inválida')
         }
@@ -103,11 +107,16 @@
             alert('Campos imcompletos!')
         }
 
+        if(notaVar > 10 || notaVar < 0){
+            erro = true
+            alert('Nota de 1 a 10!')
+        }
+
         if(erro){
             alert('Existem pendências no seu formulário!')
             ipt_nota.style.border = 'solid 3px red'
-            ipt_motivo.style.color = 'solid 3px red'
-            ipt_sugestao.style.color = 'solid 3px red'
+            ipt_motivo.style.border= 'solid 3px red'
+            ipt_sugestao.style.border = 'solid 3px red'
         }
         else {
             inst.style.display = 'none'
@@ -140,7 +149,7 @@
 
             } else {
 
-                throw ("Houve um erro ao tentar realizar o cadastro!");
+                throw ("Houve um erro ao tentar realizar a avaliação!");
             }
 
         }).catch(function (resposta) {

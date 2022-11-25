@@ -63,7 +63,7 @@
                 <button onclick="cadastrar()">Cadastrar</button>
 
                 <div id="div_aguardar" class="loading-div">
-                    <i class="fa-sharp fa-solid fa-spinner"></i>
+                    
                 </div>
 
                 <div id="div_erros_login">
@@ -200,7 +200,7 @@
             if (resposta.ok) {
                 cardErro.style.display = "block";
 
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                alert('Cadastro realizado com sucesso! Redirecionando para tela de Login...');
 
                 setTimeout(() => {
                     window.location = "LoginPI.html";

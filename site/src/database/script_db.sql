@@ -11,13 +11,12 @@ senha varchar(45)
 );
 
 CREATE TABLE avaliacao(
-idAvaliacao int,
-nota int,
-motivo varchar(45),
-sugestao varchar(45),
+idAvaliacao int primary key auto_increment,
+nota int not null,
+motivo varchar(45) not null,
+sugestao varchar(45) not null,
 comentarios varchar(45),
 fkUsuario int,
-primary key(fkUsuario, idAvaliacao),
 foreign key(fkUsuario) REFERENCES usuario(idUsuario)
 );
 
@@ -29,3 +28,8 @@ acerto int,
 fkUsuario int,
 foreign key(fkUsuario) REFERENCES usuario(idUsuario)
 );
+
+
+
+    
+    
