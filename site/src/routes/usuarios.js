@@ -24,4 +24,8 @@ router.post("/enviar", function (req, res) {
     usuarioController.enviar(req, res);
 });
 
+router.post("/quiz", function (req, res) {
+    usuarioController.quiz(req, res);
+});
+
 module.exports = router;

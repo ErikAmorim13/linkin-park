@@ -103,20 +103,23 @@ function enviar(req, res) {
     var motivo = req.body.motivoServer;
     var sugestao= req.body.sugestaoServer;
     var comentarios = req.body.comentariosServer;
+    var fkUsuario = req.body.fkUsuarioServer
 
     // Faça as validações dos valores
     if (nota == undefined) {
-        res.status(400).send("Seu nome está undefined!");
+        res.status(400).send("Sua nota está undefined!");
     } else if (motivo == undefined) {
-        res.status(400).send("Seu email está undefined!");
+        res.status(400).send("Seu motivo está undefined!");
     } else if (sugestao == undefined) {
-        res.status(400).send("Sua senha está undefined!");
+        res.status(400).send("Sua sugestão está undefined!");
     } else if(comentarios == undefined){
-        res.status(400).send("Seu user está undefined!");
+        res.status(400).send("Seu comentário está undefined!");
+    }else if(fkUsuario == undefined){
+        res.status(400).send("Seu fkUser está undefined!");
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.enviar(nota, motivo, sugestao, comentarios)
+        usuarioModel.enviar(nota, motivo, sugestao, comentarios, fkUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -125,7 +128,7 @@ function enviar(req, res) {
                 function (erro) {
                     console.log(erro);
                     console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        "\nHouve um erro ao realizar o envio! Erro: ",
                         erro.sqlMessage
                     );
                     res.status(500).json(erro.sqlMessage);
@@ -134,10 +137,44 @@ function enviar(req, res) {
     }
 }
 
+function quiz(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var acerto =  req.body.certoServer;
+    var fkUsuario =  req.body.fkUsuarioServer;
+
+    // Faça as validações dos valores
+    if (acerto == undefined) {
+        res.status(400).send("acerto está undefined!");
+    }else if(fkUsuario == undefined){
+        res.status(400).send("Seu fkUser está undefined!");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.quiz(acerto, fkUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o quiz! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
     testar,
-    enviar
+    enviar,
+    quiz
 }

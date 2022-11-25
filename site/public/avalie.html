@@ -94,6 +94,7 @@
         var motivoVar = ipt_motivo.value
         var sugestaoVar = ipt_sugestao.value
         var comentariosVar = ipt_comentarios.value
+        var fkUsuario = sessionStorage.ID_USUARIO
         var erro = false
 
        
@@ -135,6 +136,7 @@
                 motivoServer: motivoVar,
                 sugestaoServer: sugestaoVar,
                 comentariosServer: comentariosVar,
+                fkUsuarioServer: fkUsuario,
             })
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO enviar()!")

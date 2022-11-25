@@ -31,13 +31,25 @@ function cadastrar(nome, email, nomeUser, senha) {
     return database.executar(instrucao);
 }
 
-function enviar(nota, motivo, sugestao, comentarios) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function enviar():", nota, motivo, sugestao, comentarios);
+function enviar(nota, motivo, sugestao, comentarios, fkUsuario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function enviar():", nota, motivo, sugestao, comentarios, fkUsuario);
     
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO avaliacao (nota, motivo, sugestao, comentarios) VALUES ('${nota}', '${motivo}', '${sugestao}','${comentarios}');
+        INSERT INTO avaliacao (nota, motivo, sugestao, comentarios, fkUsuario) VALUES ('${nota}', '${motivo}', '${sugestao}','${comentarios}', '${fkUsuario}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function quiz(acerto, fkUsuario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function enviar():", acerto, fkUsuario);
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucao = `
+        INSERT INTO quiz (acerto, fkUsuario) VALUES ('${acerto}', '${fkUsuario}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -48,4 +60,5 @@ module.exports = {
     cadastrar,
     listar,
     enviar,
+    quiz
 };

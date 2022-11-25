@@ -210,7 +210,7 @@
                 <select class="slt_options" id="slt_options10">
                     <option value="1">10/09/1980</option>
                     <option value="2">20/03/1976</option>
-                    <option value="3">20/07/1978</option>
+                    <option value="3">30/07/1978</option>
                     <option value="4">19/05/1974</option>
                 </select>
 
@@ -218,7 +218,14 @@
         </div>
 
         <div class="button">
-            <button onclick="checar()">Enviar</button>(Resultado abaixo)
+            <button onclick="checar()">Enviar</button>
+
+        <div id="div_aguardar" class="loading-div">
+                    
+        </div>
+
+        <div id="cardErro">
+
         </div>
 
     </div>
@@ -254,6 +261,7 @@
         )
         var certo = 0
         var porcAcerto = 0
+        var fkUsuario = sessionStorage.ID_USUARIO
 
         for(let index = 0; index < corretas.length; index++){
             if(questoes[index] == corretas[index]){
@@ -263,10 +271,14 @@
         }
 
         porcAcerto = (certo/10) * 100
-        content.innerHTML += 
+        content.innerHTML = 
         `
         <h1>Você acertou ${porcAcerto.toFixed(0)}%</h1>
         <p class="sub">Acertou ${certo} de 10</p>
+
+        <div class="button" id="tent">
+            <button onclick="tentar()">Tentar Novamente</button>
+        </div>
 
         `
 
@@ -278,6 +290,46 @@
             content.innerHTML += `<br> <p class="sub">Você precisa se aprofundar um pouco mais</p><br>`
         }else{
             content.innerHTML += `<br> <p class="sub">Você é um fã recente, que tal ler um dos nossos artigos e tentar novamente?</p><br>`
-        }   
+        }
+        
+        fetch("/usuarios/quiz", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                certoServer: certo,
+                fkUsuarioServer: fkUsuario
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO enviar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                });
+
+            } else {
+
+                throw ("Houve um erro ao tentar realizar o envio do quiz!");
+            }
+
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+    function tentar(){
+        window.location = 'quizzes.html'
     }
 </script>
