@@ -53,6 +53,10 @@ body{
     margin-left: 100px;
 }
 
+.sair a{
+    cursor: pointer;
+}
+
 
 
 
@@ -183,4 +187,19 @@ body{
     border: black;
     background-color: #cfcfcf;
     border-radius: 5px;
+}
+
+
+
+
+
+
+/*DASHBOARD*/
+
+.graph canvas{
+    height: 400px;
+}
+
+#btn button{
+    width: 100px;
 }
