@@ -22,8 +22,12 @@
                         <li><a href="avalie.html">Avalie-nos</a></li>
 
                         <div class="sair">
-                            <a href="index.html"><i class="fa-solid fa-door-open"></i> Sair</a>
+                            <a onclick="sair()"><i class="fa-solid fa-door-open"></i> Sair</a>
+                        </div>
 
+                        <div class="user">
+                            <i class="fa-solid fa-user"></i>
+                            <span id="nome_user">Olá fulano</span>
                         </div>
 
                     </ul>
@@ -241,6 +245,9 @@
     // Assign the warning class to the first div
     div.className = 'warning';*/
 
+    var nomeUsuario = sessionStorage.NOME_USUARIO
+    nome_user.innerHTML = `${nomeUsuario}` 
+
     var questoes =[]
     var corretas = [3,4,1,2,1,1,4,2,3,2]
 
@@ -331,5 +338,10 @@
 
     function tentar(){
         window.location = 'quizzes.html'
+    }
+
+    function sair() {
+        sessionStorage.clear()
+        window.location = "index.html"
     }
 </script>
