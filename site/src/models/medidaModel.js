@@ -4,7 +4,6 @@ function buscarUltimasMedidas(idUsuario, limite_linhas) {
 
     instrucaoSql = 'SELECT * FROM quiz JOIN usuario ON id = fkUsuario ORDER BY idQuiz desc LIMIT 5;'
 
-
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }

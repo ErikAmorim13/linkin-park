@@ -27,33 +27,12 @@ body{
     font-weight: 400;
 }
 
-/*Estilização do carrossel*/
+/*Estilização da section*/
 
 section{
     margin-top: 50px;
 }
 
-.slider{
-    overflow: hidden;
-
-}
-
-.slider input{
-   margin: 30px auto auto 50px;
-}
-
-.slider input:nth-child(1){
-    margin-left: 220px;
-}
-
-
-.slider > .slider-content{
-    display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
-    transition: all 500ms ease;
-
-}
 
 .slider-content img{
     height: 500px;
@@ -61,29 +40,6 @@ section{
 
 }
 
-.slider > .slider-content > .slider-item {
-    flex: 0 0 auto;
-    width: 100%;
-}
-
-.slider > input:nth-child(1):checked ~ .slider-content{
-    transform: translateX(0%);
-}
-
-.slider > input:nth-child(2):checked ~ .slider-content{
-    transform: translateX(-100%);
-}
-.slider > input:nth-child(3):checked ~ .slider-content{
-    transform: translateX(-200%);
-}
-
-.slider > input:nth-child(4):checked ~ .slider-content{
-    transform: translateX(-300%);
-}
-
-.slider > input:nth-child(5):checked ~ .slider-content{
-    transform: translateX(-400%);
-}
 
 /* Contexto */
 
