@@ -46,7 +46,7 @@ section{
 .history_inicio{
     display: flex;
     align-items: center;
-    background-color: black;
+    background-color: rgb(216, 23, 234);
     height: 500px;
     margin-top: 50px;
 }
